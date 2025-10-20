@@ -1,13 +1,30 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth custom-scroll">
+
 <head>
   <meta charset="utf-8">
-  <title>ECommerceApp</title>
+  <title>Digikala</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 </head>
-<body>
-  <app-root></app-root>
+
+<body class="bg-gray-100/60 overflow-x-hidden mat-typography" dir="ltr">
+  <app-root>
+    <div class="fixed left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gray-100 z-50">
+      <div class="w-full h-full flex items-center justify-center">
+        <div class="flex flex-row gap-2">
+          <div class="w-4 h-4 rounded-full bg-red-600 animate-bounce"></div>
+          <div class="w-4 h-4 rounded-full bg-red-600 animate-bounce [animation-delay:-.3s]"></div>
+          <div class="w-4 h-4 rounded-full bg-red-600 animate-bounce [animation-delay:-.5s]"></div>
+        </div>
+      </div>
+    </div>
+  </app-root>
 </body>
+
 </html>

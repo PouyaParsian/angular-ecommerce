@@ -1,0 +1,36 @@
+<section class="space-y-10">
+  <app-hero class="block"></app-hero>
+  <app-product-list [categoryURL]="'mobile-accessories'" [limitNumber]="limit + 1" [isHomePage]="true" class="block">
+    <h2 class="text-xl font-semibold">Mobile Accessories</h2>
+    <span (click)="handleSeeMoreClick('mobile-accessories')" class="text-red-600 cursor-pointer">See more</span>
+  </app-product-list>
+  <app-product-list [categoryURL]="'fragrances'" [limitNumber]="limit" [isHomePage]="true" class="block">
+    <h2 class="text-xl font-semibold">Fragrances</h2>
+    <span (click)="handleSeeMoreClick('fragrances')" class="text-red-600 cursor-pointer">See more</span>
+  </app-product-list>
+  <app-product-list [categoryURL]="'groceries'" [limitNumber]="limit" [isHomePage]="true" class="block">
+    <h2 class="text-xl font-semibold">Groceries</h2>
+    <span (click)="handleSeeMoreClick('groceries')" class="text-red-600 cursor-pointer">See more</span>
+  </app-product-list>
+  <div class="relative py-6 lg:px-10">
+    <h2 class="text-xl font-semibold text-white text-center">Most Popular Products</h2>
+    <app-product-list [categoryURL]="''" [limitNumber]="limit + 1" [isHomePage]="true" [sortProducts]="'rating'"
+      [orderProducts]="'desc'" class="block relative py-4">
+    </app-product-list>
+    <span
+      class="background absolute bg-red-400 lg:w-full w-screen lg:h-3/5 h-full top-0 left-1/2 -translate-x-1/2 -z-10 lg:rounded-4xl">
+    </span>
+  </div>
+  <app-product-list [categoryURL]="'home-decoration'" [limitNumber]="limit" [isHomePage]="true" class="block">
+    <h2 class="text-xl font-semibold">Home Decoration</h2>
+    <span (click)="handleSeeMoreClick('home-decoration')" class="text-red-600 cursor-pointer">See more</span>
+  </app-product-list>
+  <app-product-list [categoryURL]="'furniture'" [limitNumber]="limit" [isHomePage]="true" class="block">
+    <h2 class="text-xl font-semibold">Furniture</h2>
+    <span (click)="handleSeeMoreClick('furniture')" class="text-red-600 cursor-pointer">See more</span>
+  </app-product-list>
+  <app-product-list [categoryURL]="'sports-accessories'" [limitNumber]="limit" [isHomePage]="true" class="block">
+    <h2 class="text-xl font-semibold">Sports Accessories</h2>
+    <span (click)="handleSeeMoreClick('sports-accessories')" class="text-red-600 cursor-pointer">See more</span>
+  </app-product-list>
+</section>

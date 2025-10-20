@@ -1,0 +1,6 @@
+<section class="w-full gap-10 flex lg:flex-row flex-col">
+  @if (cartService.cart().length > 0) {
+    <app-order-summary class="w-full lg:w-2/4"></app-order-summary>
+  }
+  <app-cart-list class="w-full"></app-cart-list>
+</section>

@@ -1,0 +1,143 @@
+<section class="h-full w-full">
+  <div class="w-full grid md:grid-cols-2 lg:grid-cols-3 md:grid-rows-2 lg:grid-rows-2 xl:gap-4 gap-3">
+    <div
+      class="aspect-[6/3] lg:aspect-video md:col-span-2 lg:col-span-2 md:row-span-2 md:h-full bg-white relative hidden md:block">
+      <app-image-slider [slides]="firstImageSlider"></app-image-slider>
+    </div>
+    <div class="aspect-auto md:h-full bg-white relative cursor-pointer" routerLink="/products">
+      <img src="images/header/image-slider-2/1.jpg" alt="Special products with exceptional discounts" class="w-full h-full object-cover block">
+    </div>
+    <div class="aspect-auto md:h-full bg-white relative cursor-pointer" routerLink="/products">
+      <img src="images/header/image-slider-3/1.jpg" alt="Newest products with excellent quality" class="w-full h-full object-cover block">
+    </div>
+  </div>
+
+  <div class="w-full overflow-x-hidden lg:mt-6 mt-5 rounded-lg fade-sides">
+    <div class="flex gap-3 lg:gap-5 animate-infinite-scroll hover:animate w-max">
+      <div class="flex gap-3 lg:gap-5">
+        <div
+          class="xl:w-50 xl:h-32 lg:w-45 lg:h-27 w-40 h-24 bg-white rounded-lg flex flex-col items-center justify-center gap-3">
+          <img src="images/header/category-icons/icons8_smartphone_tablet.svg" alt="Smartphone and tablet icon" class="min-h-10 h-1/2 max-h-16">
+          <h2 class="text-sm">Electronics</h2>
+        </div>
+        <div
+          class="xl:w-50 xl:h-32 lg:w-45 lg:h-27 w-40 h-24 bg-white rounded-lg flex flex-col items-center justify-center gap-3">
+          <img src="images/header/category-icons/icons8_spray.svg" alt="Perfume spray icon" class="min-h-10 h-1/2 max-h-16">
+          <h2 class="text-sm">Fragrance</h2>
+        </div>
+        <div
+          class="xl:w-50 xl:h-32 lg:w-45 lg:h-27 w-40 h-24 bg-white rounded-lg flex flex-col items-center justify-center gap-3">
+          <img src="images/header/category-icons/icons8_shaving.svg" alt="Shaving and skincare icon" class="min-h-10 h-1/2 max-h-16">
+          <h2 class="text-sm">Skincare</h2>
+        </div>
+        <div
+          class="xl:w-50 xl:h-32 lg:w-45 lg:h-27 w-40 h-24 bg-white rounded-lg flex flex-col items-center justify-center gap-3">
+          <img src="images/header/category-icons/icons8_ingredients_for_cooking.svg" alt="Cooking ingredients icon" class="min-h-10 h-1/2 max-h-16">
+          <h2 class="text-sm">Groceries</h2>
+        </div>
+        <div
+          class="xl:w-50 xl:h-32 lg:w-45 lg:h-27 w-40 h-24 bg-white rounded-lg flex flex-col items-center justify-center gap-3">
+          <img src="images/header/category-icons/icons8_wing_chair.svg" alt="Armchair and home decor icon" class="min-h-10 h-1/2 max-h-16">
+          <h2 class="text-sm">Home Decoration</h2>
+        </div>
+        <div
+          class="xl:w-50 xl:h-32 lg:w-45 lg:h-27 w-40 h-24 bg-white rounded-lg flex flex-col items-center justify-center gap-3">
+          <img src="images/header/category-icons/icons8_t-shirt_1.svg" alt="T-shirt and clothing icon" class="min-h-10 h-1/2 max-h-16">
+          <h2 class="text-sm">Clothing</h2>
+        </div>
+        <div
+          class="xl:w-50 xl:h-32 lg:w-45 lg:h-27 w-40 h-24 bg-white rounded-lg flex flex-col items-center justify-center gap-3">
+          <img src="images/header/category-icons/icons8_watches_front_view.svg" alt="Watches icon" class="min-h-10 h-1/2 max-h-16">
+          <h2 class="text-sm">Watches</h2>
+        </div>
+        <div
+          class="xl:w-50 xl:h-32 lg:w-45 lg:h-27 w-40 h-24 bg-white rounded-lg flex flex-col items-center justify-center gap-3">
+          <img src="images/header/category-icons/icons8_shopping_bag_full.svg" alt="Shopping bag icon" class="min-h-10 h-1/2 max-h-16">
+          <h2 class="text-sm">Bags</h2>
+        </div>
+        <div
+          class="xl:w-50 xl:h-32 lg:w-45 lg:h-27 w-40 h-24 bg-white rounded-lg flex flex-col items-center justify-center gap-3">
+          <img src="images/header/category-icons/icons8_ring_side_view.svg" alt="Ring and jewelry icon" class="min-h-10 h-1/2 max-h-16">
+          <h2 class="text-sm">Jewelry</h2>
+        </div>
+        <div
+          class="xl:w-50 xl:h-32 lg:w-45 lg:h-27 w-40 h-24 bg-white rounded-lg flex flex-col items-center justify-center gap-3">
+          <img src="images/header/category-icons/icons8_glasses.svg" alt="Sunglasses icon" class="min-h-10 h-1/2 max-h-16">
+          <h2 class="text-sm">Sunglasses</h2>
+        </div>
+        <div
+          class="xl:w-50 xl:h-32 lg:w-45 lg:h-27 w-40 h-24 bg-white rounded-lg flex flex-col items-center justify-center gap-3">
+          <img src="images/header/category-icons/icons8_people_in_car_side_view.svg" alt="Car and automotive icon" class="min-h-10 h-1/2 max-h-16">
+          <h2 class="text-sm">Automotive</h2>
+        </div>
+        <div
+          class="xl:w-50 xl:h-32 lg:w-45 lg:h-27 w-40 h-24 bg-white rounded-lg flex flex-col items-center justify-center gap-3">
+          <img src="images/header/category-icons/icons8_fridge.svg" alt="Refrigerator and appliances icon" class="min-h-10 h-1/2 max-h-16">
+          <h2 class="text-sm">Appliances</h2>
+        </div>
+      </div>
+      <div class="flex gap-3 lg:gap-5">
+        <div
+          class="xl:w-50 xl:h-32 lg:w-45 lg:h-27 w-40 h-24 bg-white rounded-lg flex flex-col items-center justify-center gap-3">
+          <img src="images/header/category-icons/icons8_smartphone_tablet.svg" alt="Smartphone and tablet icon" class="min-h-10 h-1/2 max-h-16">
+          <h2 class="text-sm">Electronics</h2>
+        </div>
+        <div
+          class="xl:w-50 xl:h-32 lg:w-45 lg:h-27 w-40 h-24 bg-white rounded-lg flex flex-col items-center justify-center gap-3">
+          <img src="images/header/category-icons/icons8_spray.svg" alt="Perfume spray icon" class="min-h-10 h-1/2 max-h-16">
+          <h2 class="text-sm">Fragrance</h2>
+        </div>
+        <div
+          class="xl:w-50 xl:h-32 lg:w-45 lg:h-27 w-40 h-24 bg-white rounded-lg flex flex-col items-center justify-center gap-3">
+          <img src="images/header/category-icons/icons8_shaving.svg" alt="Shaving and skincare icon" class="min-h-10 h-1/2 max-h-16">
+          <h2 class="text-sm">Skincare</h2>
+        </div>
+        <div
+          class="xl:w-50 xl:h-32 lg:w-45 lg:h-27 w-40 h-24 bg-white rounded-lg flex flex-col items-center justify-center gap-3">
+          <img src="images/header/category-icons/icons8_ingredients_for_cooking.svg" alt="Cooking ingredients icon" class="min-h-10 h-1/2 max-h-16">
+          <h2 class="text-sm">Groceries</h2>
+        </div>
+        <div
+          class="xl:w-50 xl:h-32 lg:w-45 lg:h-27 w-40 h-24 bg-white rounded-lg flex flex-col items-center justify-center gap-3">
+          <img src="images/header/category-icons/icons8_wing_chair.svg" alt="Armchair and home decor icon" class="min-h-10 h-1/2 max-h-16">
+          <h2 class="text-sm">Home Decoration</h2>
+        </div>
+        <div
+          class="xl:w-50 xl:h-32 lg:w-45 lg:h-27 w-40 h-24 bg-white rounded-lg flex flex-col items-center justify-center gap-3">
+          <img src="images/header/category-icons/icons8_t-shirt_1.svg" alt="T-shirt and clothing icon" class="min-h-10 h-1/2 max-h-16">
+          <h2 class="text-sm">Clothing</h2>
+        </div>
+        <div
+          class="xl:w-50 xl:h-32 lg:w-45 lg:h-27 w-40 h-24 bg-white rounded-lg flex flex-col items-center justify-center gap-3">
+          <img src="images/header/category-icons/icons8_watches_front_view.svg" alt="Watches icon" class="min-h-10 h-1/2 max-h-16">
+          <h2 class="text-sm">Watches</h2>
+        </div>
+        <div
+          class="xl:w-50 xl:h-32 lg:w-45 lg:h-27 w-40 h-24 bg-white rounded-lg flex flex-col items-center justify-center gap-3">
+          <img src="images/header/category-icons/icons8_shopping_bag_full.svg" alt="Shopping bag icon" class="min-h-10 h-1/2 max-h-16">
+          <h2 class="text-sm">Bags</h2>
+        </div>
+        <div
+          class="xl:w-50 xl:h-32 lg:w-45 lg:h-27 w-40 h-24 bg-white rounded-lg flex flex-col items-center justify-center gap-3">
+          <img src="images/header/category-icons/icons8_ring_side_view.svg" alt="Ring and jewelry icon" class="min-h-10 h-1/2 max-h-16">
+          <h2 class="text-sm">Jewelry</h2>
+        </div>
+        <div
+          class="xl:w-50 xl:h-32 lg:w-45 lg:h-27 w-40 h-24 bg-white rounded-lg flex flex-col items-center justify-center gap-3">
+          <img src="images/header/category-icons/icons8_glasses.svg" alt="Sunglasses icon" class="min-h-10 h-1/2 max-h-16">
+          <h2 class="text-sm">Sunglasses</h2>
+        </div>
+        <div
+          class="xl:w-50 xl:h-32 lg:w-45 lg:h-27 w-40 h-24 bg-white rounded-lg flex flex-col items-center justify-center gap-3">
+          <img src="images/header/category-icons/icons8_people_in_car_side_view.svg" alt="Car and automotive icon" class="min-h-10 h-1/2 max-h-16">
+          <h2 class="text-sm">Automotive</h2>
+        </div>
+        <div
+          class="xl:w-50 xl:h-32 lg:w-45 lg:h-27 w-40 h-24 bg-white rounded-lg flex flex-col items-center justify-center gap-3">
+          <img src="images/header/category-icons/icons8_fridge.svg" alt="Refrigerator and appliances icon" class="min-h-10 h-1/2 max-h-16">
+          <h2 class="text-sm">Appliances</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

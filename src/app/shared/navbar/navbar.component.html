@@ -1,0 +1,41 @@
+<section class="bg-white fixed w-full z-30 top-0 start-0 shadow-black/5 shadow-xl/30">
+  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+
+    <a routerLink="">
+      <img src="images/navbar/navbar-icon.png" alt="Logo" class="md:h-6 h-5">
+    </a>
+
+    <div class="flex items-center justify-center md:order-2 space-x-8">
+      <button type="button" routerLink="/cart"
+        class="text-gray-500 md:hover:text-red-600 transition-colors md:text-lg text-sm text-center cursor-pointer relative">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="absolute md:top-5 top-4 text-[11px]">{{cartService.cart().length}}</span>
+      </button>
+      <button type="button" (click)="toggleSearchBox()"
+        class="text-gray-500 md:hover:text-red-600 transition-colors md:text-lg text-sm text-center cursor-pointer"><i
+          class="fas fa-search"></i></button>
+      <button type="button" (click)="toggleDropdownMenu()"
+        class="text-gray-500 md:hover:text-red-600 transition-colors md:text-lg text-sm text-center cursor-pointer md:hidden"
+        aria-controls="navbar-sticky" aria-expanded="false"><i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+
+    <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" [class.hidden]="!isDropdownMenuOpen">
+      <ul
+        class="flex flex-col md:p-0 mt-4 font-medium rounded-lg md:space-x-8 md:flex-row md:mt-0">
+        <li>
+          <a class="block py-2 px-3 text-gray-600 rounded-sm md:hover:text-red-600 transition-colors md:p-0" (click)="toggleDropdownMenu()"
+            aria-current="page" routerLink="/" routerLinkActive="text-red-600" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+        </li>
+        <li>
+          <a class="block py-2 px-3 text-gray-600 rounded-sm md:hover:text-red-600 transition-colors md:p-0" (click)="toggleDropdownMenu()"
+            routerLink="/products" routerLinkActive="text-red-600">Products</a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+@if (isSearching) {
+<app-search-product (isSearching)="closeSearchBox($event)"></app-search-product>
+}

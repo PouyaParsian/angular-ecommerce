@@ -1,0 +1,47 @@
+<div
+  class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full z-20 bg-black/20 transition-all">
+  <div class="w-full fixed left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 px-5">
+    <form class="max-w-lg mx-auto">
+      <div class="flex relative">
+        <label for="search-dropdown" class="mb-2 text-sm font-medium text-gray-900 sr-only">Your Email</label>
+        <button id="dropdown-button" (click)="toggleCategorySection()"
+          class="shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-white bg-red-500 rounded-s-lg hover:bg-red-600 cursor-pointer transition-colors"
+          type="button">Categorys
+          <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+            viewBox="0 0 10 6">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="m1 1 4 4 4-4" />
+          </svg>
+        </button>
+        <div class="top-12 z-10 bg-white rounded-lg w-48 absolute"
+          [class.hidden]="!isCategorySectionOpen">
+          <ul class="py-2 overflow-y-auto max-h-48 text-sm  custom-scroll" aria-labelledby="dropdown-button">
+            @for (category of categories; track $index) {
+            <li>
+              <button type="button" 
+              (click)="selectCategory(category.value)"
+              [ngClass]="{
+                'text-red-600': selectedCategory === category.value
+              }"
+              class="inline-flex w-full px-4 py-2 hover:bg-red-100 cursor-pointer">{{category.label}}</button>
+            </li>
+            }
+          </ul>
+        </div>
+        <div class="relative w-full">
+          <input type="search" id="search-dropdown" name="search-input" [(ngModel)]="searchInputValue"
+            class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-e-lg placeholder:text-gray-500"
+            placeholder="Search product name" required />
+          <button type="submit" (click)="handleSearchClick()"
+            class="absolute top-0 end-0 p-2.5 text-sm font-medium h-full text-white bg-red-500 rounded-e-lg hover:bg-red-600 cursor-pointer transition-colors">
+            <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+            </svg>
+            <span class="sr-only">Search</span>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+<div class="rounded-lg bg-white p-4 md:p-6 shadow-xl/20 shadow-black/5">
+  <div class="flex flex-col space-y-4 md:flex-row md:items-center md:justify-between md:gap-6 md:space-y-0">
+
+    <!-- Product Image -->
+    <a routerLink="/details/{{item.product.id}}" class="mx-auto md:mx-0">
+      <img class="w-32 sm:w-40 md:w-45" [src]="item.product.thumbnail" alt="Product image"/>
+    </a>
+
+    <!-- Product Title and Remove Button -->
+    <div class="w-full space-y-4 md:ml-10">
+      <p class="lg:text-xl text-base text-gray-900 text-left truncate">{{item.product.title}}</p>
+      <div class="flex justify-start md:block">
+        <button type="button" class="inline-flex items-center text-sm font-medium text-red-500 cursor-pointer"
+          (click)="cartService.deleteFromCart(item.product.id)">
+          <svg class="me-1.5 h-5 w-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+            fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M6 18 17.94 6M18 18 6.06 6" />
+          </svg>
+          Remove
+        </button>
+      </div>
+    </div>
+
+    <!-- Quantity Controls -->
+    <div class="flex items-center justify-center gap-4">
+      <button (click)="cartService.increaseQuantity(item.product.id)"
+        class="text-xl bg-gray-300 rounded-full w-7 h-7 flex items-center justify-center cursor-pointer">+</button>
+      <p>{{item.quantity}}</p>
+      <button (click)="cartService.decreaseQuantity(item.product.id)"
+        class="text-xl bg-gray-300 rounded-full w-7 h-7 flex items-center justify-center cursor-pointer">-</button>
+    </div>
+
+    <!-- Price -->
+    <div class="flex items-center justify-between md:justify-end">
+      <div class="text-end md:w-32 mx-auto md:mx-0">
+        <p class="text-base text-gray-900 mt-2">${{item.product.price}}</p>
+      </div>
+    </div>
+
+  </div>
+</div>

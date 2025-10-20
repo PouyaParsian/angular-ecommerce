@@ -1,0 +1,10 @@
+<button
+   class="fixed md:left-5 left-3 text-sm z-10 flex items-center justify-center rounded-full text-white no-underline p-3 bg-red-600 hover:bg-red-700 cursor-pointer transition-all duration-200 ease-in-out"
+   [ngClass]="{
+     'bottom-8 opacity-100': buttonVisibility,
+     'bottom-0 opacity-0 invisible': !buttonVisibility
+   }"
+   (click)="goUp()"
+   >
+  <i class="fas fa-arrow-up"></i>
+</button>
