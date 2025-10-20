@@ -85,23 +85,7 @@ export class ProductListComponent implements OnInit {
   }
 
   private setupItems() {
-    this.breakpointObserver.observe([
-      Breakpoints.XLarge,
-      Breakpoints.Large,
-      Breakpoints.Medium,
-      Breakpoints.Small,
-      Breakpoints.XSmall
-    ]).subscribe(result => {
-      if (result.breakpoints[Breakpoints.Large] || result.breakpoints[Breakpoints.XLarge]) {
-        this.items = new Array(4).fill(0);
-      }
-      else if (result.breakpoints[Breakpoints.Medium]) {
-        this.items = new Array(3).fill(0);
-      }
-      else {
-        this.items = new Array(2).fill(0);
-      }
-    });
+    this.items = new Array(4).fill(0);
   }
 
   resetFilters() {

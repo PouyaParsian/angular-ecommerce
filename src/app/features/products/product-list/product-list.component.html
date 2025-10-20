@@ -1,33 +1,49 @@
 @if (!loading()) {
-<div class="w-full h-full">
-  <div class="flex items-center justify-between">
-    <ng-content></ng-content>
-  </div>
-  @if (products().length > 0) {
-  <div class="w-full h-full grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 mt-3">
-    @for (product of products() | paginate: { itemsPerPage: itemsPerPage, currentPage: p }; track product.id) {
-    <app-product-card [product]="product"></app-product-card>
+  <div class="w-full h-full">
+    <div class="flex items-center justify-between">
+      <ng-content></ng-content>
+    </div>
+
+    @if (products().length > 0) {
+      <div class="w-full h-full grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 mt-3">
+        @for (product of products() | paginate: { itemsPerPage: itemsPerPage, currentPage: p }; track product.id) {
+          @if (isHomePage) {
+            <app-product-card [product]="product" [class.lg:hidden]="$index === 3" [class.xl:block]="$index === 3"></app-product-card>
+          }
+          @else {
+            <app-product-card [product]="product"></app-product-card>
+          }
+        }
+      </div>
+
+      @if (!isHomePage) {
+        <div class="mt-8 flex items-center justify-center">
+          <pagination-controls (click)="goUp()" (pageChange)="p = $event"></pagination-controls>
+        </div>
+      }
+    }
+    @else {
+      <div class="flex flex-col items-center justify-center gap-6 py-10">
+        <img
+          src="images/products-page/not-found.svg"
+          alt="No product available"
+          class="max-h-48 m-auto mt-10"
+          loading="lazy"
+        >
+
+        <h3 class="text-center font-medium text-2xl mt-4">
+          We couldn’t find <span class="font-bold">{{searchInputValue}}</span>
+        </h3>
+
+        <app-custom-button (click)="resetFilters()" [label]="'View all products'"></app-custom-button>
+      </div>
     }
   </div>
-  @if (!isHomePage) {
-  <div class="mt-8 flex items-center justify-center">
-    <pagination-controls (click)="goUp()" (pageChange)="p = $event"></pagination-controls>
-  </div>
-  }
-  }
-  @else {
-  <div class="flex flex-col items-center justify-center gap-6 py-10">
-    <img src="images/products-page/not-found.svg" alt="No product available" class="max-h-48 m-auto mt-10" loading="lazy">
-    <h3 class="text-center font-medium text-2xl mt-4">We couldn’t find <span class="font-bold">{{searchInputValue}}</span></h3>
-    <app-custom-button (click)="resetFilters()" [label]="'View all products'"></app-custom-button>
-  </div>
-  }
-</div>
 }
 @else {
-<div class="w-full h-full grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 mt-4">
-  @for (item of items; track $index) {
-  <app-product-card-skeleton></app-product-card-skeleton>
-  }
-</div>
+  <div class="w-full h-full grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 mt-4">
+    @for (item of items; track $index) {
+      <app-product-card-skeleton [class.lg:hidden]="$index === 3" [class.xl:block]="$index === 3"></app-product-card-skeleton>
+    }
+  </div>
 }

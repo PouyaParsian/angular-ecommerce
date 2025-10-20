@@ -33,32 +33,11 @@ export class MainComponent implements OnInit {
 
   ngOnInit() {
     this.resetFilters();
-    this.manageVisibleProducts();
   }
 
   handleSeeMoreClick(category: string) {
     this.router.navigate(['/products']);
     this.productQueryService.selectedCategory.set(category);
-  }
-
-  manageVisibleProducts() {
-    this.breakpointObserver.observe([
-      Breakpoints.XLarge,
-      Breakpoints.Large,
-      Breakpoints.Medium,
-      Breakpoints.Small,
-      Breakpoints.XSmall
-    ]).subscribe(result => {
-      if (result.breakpoints[Breakpoints.Large] || result.breakpoints[Breakpoints.XLarge]) {
-        this.limit = 4
-      }
-      else if (result.breakpoints[Breakpoints.Medium]) {
-        this.limit = 3;
-      }
-      else {
-        this.limit = 2;
-      }
-    });
   }
 
   resetFilters() {
