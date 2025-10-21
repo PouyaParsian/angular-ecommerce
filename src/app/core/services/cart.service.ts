@@ -38,15 +38,13 @@ export class CartService {
       this.cart.set([...current]);
       this.saveCartToLocalStorage();
     } else {
-      if(found.product.stock === 1) {
-        this.snackBar.open(`Only ${found.product.stock} left in stock`,'',
+      this.snackBar.open(`Only ${found.product.stock} left in stock`, '',
         {
           duration: 3000,
           horizontalPosition: 'right',
           verticalPosition: 'bottom',
         }
       );
-      }
     }
   }
 
