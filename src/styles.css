@@ -73,6 +73,10 @@
   cursor: not-allowed;
 }
 
+.mat-mdc-snack-bar-container .mdc-snackbar__label {
+  font-family: "Rubik", sans-serif !important;
+}
+
 @media (max-width: 768px) {
   .ngx-pagination {
     gap: 0px;

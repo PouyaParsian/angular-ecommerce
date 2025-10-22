@@ -5,16 +5,16 @@
       <div class="space-y-2">
         <dl class="flex items-center justify-between gap-4">
           <dt class="text-base font-normal text-gray-500">Shipping cost</dt>
-          <dd class="text-base font-medium text-gray-900">${{shippingCost}}</dd>
+          <dd class="text-base text-gray-900">${{shippingCost}}</dd>
         </dl>
         <dl class="flex items-center justify-between gap-4">
           <dt class="text-base font-normal text-gray-500">Tax</dt>
-          <dd class="text-base font-medium text-gray-900">${{tax}}</dd>
+          <dd class="text-base text-gray-900">${{tax}}</dd>
         </dl>
       </div>
       <dl class="flex items-center justify-between gap-4 pt-2">
-        <dt class="text-base font-bold text-gray-900">Total</dt>
-        <dd class="text-base font-bold text-gray-900">${{total()}}</dd>
+        <dt class="text-base font-medium text-gray-900">Total</dt>
+        <dd class="text-base font-medium text-gray-900">${{total()}}</dd>
       </dl>
     </div>
     <app-custom-button (click)="cartService.clearCart()" routerLink="/payment-success"
