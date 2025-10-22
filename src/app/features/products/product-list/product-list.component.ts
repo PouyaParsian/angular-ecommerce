@@ -24,7 +24,7 @@ export class ProductListComponent implements OnInit {
   @Input() sortProducts!: string;
   @Input() orderProducts!: string;
   searchInputValue!: string;
-  excludedIds = [65, 99];
+  excludedIds = [65, 99, 29];
 
   products = signal<Product[]>([]);
   loading = signal<boolean>(false);
