@@ -1,14 +1,12 @@
 import { ProductQueryService } from './../../../core/services/product-query.service';
-import { Component, effect, Input, input, OnInit, signal } from '@angular/core';
+import { Component, DestroyRef, effect, Input, input, OnInit, signal } from '@angular/core';
 import { ProductService } from '../../../core/services/product.service';
 import { Product } from '../../../core/models/product.model';
 import { ProductCardComponent } from "../product-card/product-card.component";
 import { ProductCardSkeletonComponent } from "../product-card-skeleton/product-card-skeleton.component";
 import { NgxPaginationModule } from 'ngx-pagination';
-import { SortProductsComponent } from "../sort-products/sort-products.component";
-import { Router } from '@angular/router';
 import { CustomButtonComponent } from "../../../shared/custom-button/custom-button.component";
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-product-list',
@@ -36,7 +34,7 @@ export class ProductListComponent implements OnInit {
   constructor(
     private productService: ProductService,
     private productQueryService: ProductQueryService,
-    private breakpointObserver: BreakpointObserver
+    private destroyRef: DestroyRef
   ) {
     effect(() => {
       const search = this.productQueryService.searchProduct();
@@ -58,8 +56,14 @@ export class ProductListComponent implements OnInit {
 
   private getAllProducts() {
     this.productService
-      .getProducts(this.limitNumber(), this.productQueryService.searchProduct(), this.sortProducts, this.orderProducts)
-      .subscribe((res) => {
+      .getProducts(
+        this.limitNumber(),
+        this.productQueryService.searchProduct(),
+        this.sortProducts,
+        this.orderProducts
+      )
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe(res => {
         const filtered = res.products.filter(p => !this.excludedIds.includes(p.id));
         this.products.set(filtered);
         this.loading.set(false);
@@ -68,8 +72,14 @@ export class ProductListComponent implements OnInit {
 
   private getProductsByCategory() {
     this.productService
-      .getProductsByCategory(this.categoryURL, this.limitNumber(), this.sortProducts, this.orderProducts)
-      .subscribe((res) => {
+      .getProductsByCategory(
+        this.categoryURL,
+        this.limitNumber(),
+        this.sortProducts,
+        this.orderProducts
+      )
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe(res => {
         const filtered = res.products.filter(p => !this.excludedIds.includes(p.id));
         this.products.set(filtered);
         this.loading.set(false);
