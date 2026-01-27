@@ -13,7 +13,7 @@
         <!-- Price and Rating Section -->
         <div class="flex flex-col sm:flex-row sm:items-center mb-6 gap-3 sm:gap-0">
           <h6 class="sm:text-2xl text-xl leading-9 text-gray-900 sm:pr-5 sm:border-r sm:mr-5">
-            ${{product.price}}
+            {{product.price | currency}}
           </h6>
           <div class="flex items-center flex-wrap gap-3 sm:gap-4">
             <div class="flex items-center justify-center text-sm gap-2 p-2 rounded-xl bg-red-100 text-red-900">

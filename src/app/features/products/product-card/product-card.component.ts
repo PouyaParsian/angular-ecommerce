@@ -5,12 +5,13 @@ import { NgClass } from '@angular/common';
 import { CustomButtonComponent } from "../../../shared/custom-button/custom-button.component";
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router, RouterLink } from '@angular/router';
+import { CurrencyPipe } from "@angular/common";
 
 @Component({
   selector: 'app-product-card',
   templateUrl: './product-card.component.html',
   styleUrls: ['./product-card.component.css'],
-  imports: [NgClass, CustomButtonComponent, RouterLink]
+  imports: [NgClass, CustomButtonComponent, RouterLink, CurrencyPipe]
 })
 export class ProductCardComponent {
   

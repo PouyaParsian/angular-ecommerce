@@ -6,12 +6,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from '../../../core/services/product.service';
 import { NgClass } from '@angular/common';
 import { ProductDetailsSkeletonComponent } from "../product-details-skeleton/product-details-skeleton.component";
+import { CurrencyPipe } from "@angular/common";
 
 @Component({
   selector: 'app-product-details',
   templateUrl: './product-details.component.html',
   styleUrls: ['./product-details.component.css'],
-  imports: [NgClass, ProductDetailsSkeletonComponent]
+  imports: [NgClass, ProductDetailsSkeletonComponent, CurrencyPipe]
 })
 export class ProductDetailsComponent implements OnInit {
 

@@ -54,7 +54,7 @@
         class="bg-red-100 text-red-800 text-xs font-semibold px-2.5 py-0.5 rounded-sm ms-3">{{product.rating}}</span>
     </div>
     <div class="flex items-center justify-between">
-      <span class="text-base text-gray-900">${{product.price}}</span>
+      <span class="text-base text-gray-900">{{product.price | currency}}</span>
       <app-custom-button (click)="addToCart(product)" [label]="'Add'"></app-custom-button>
     </div>
   </div>

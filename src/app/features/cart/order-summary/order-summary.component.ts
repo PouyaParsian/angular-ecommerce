@@ -1,20 +1,21 @@
-import { Component, computed, inject, OnInit } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { CartService } from '../../../core/services/cart.service';
 import { RouterLink } from '@angular/router';
 import { CustomButtonComponent } from "../../../shared/custom-button/custom-button.component";
+import { CurrencyPipe } from "@angular/common";
 
 @Component({
   selector: 'app-order-summary',
   templateUrl: './order-summary.component.html',
   styleUrls: ['./order-summary.component.css'],
-  imports: [RouterLink, CustomButtonComponent]
+  imports: [RouterLink, CustomButtonComponent, CurrencyPipe]
 })
 export class OrderSummaryComponent {
 
   tax = 15;
   shippingCost = 32;
   cartService = inject(CartService);
-  
+
   total = computed(() => {
     let total = 0;
     for (const item of this.cartService.cart()) {
